@@ -1,0 +1,36 @@
+{
+    "name":  "devlearn",
+    "version":  "0.1.0",
+    "private":  true,
+    "scripts":  {
+                    "dev":  "next dev",
+                    "build":  "next build",
+                    "start":  "next start",
+                    "lint":  "next lint",
+                    "validate-content":  "ts-node -O \"{\\\"module\\\":\\\"CommonJS\\\",\\\"moduleResolution\\\":\\\"node\\\"}\" scripts/validate-content.ts",
+                    "prebuild":  "npm run validate-content"
+                },
+    "dependencies":  {
+                         "@next/mdx":  "^15.0.0",
+                         "gray-matter":  "^4.0.3",
+                         "next":  "^15.0.0",
+                         "react":  "^19.0.0",
+                         "react-dom":  "^19.0.0"
+                     },
+    "devDependencies":  {
+                            "@types/node":  "^22.0.0",
+                            "@types/react":  "^19.0.0",
+                            "@types/react-dom":  "^19.0.0",
+                            "autoprefixer":  "^10.4.20",
+                            "postcss":  "^8.4.49",
+                            "tailwindcss":  "^3.4.17",
+                            "ts-node":  "^10.9.2",
+                            "typescript":  "^5.6.0"
+                        },
+    "ts-node":  {
+                    "compilerOptions":  {
+                                            "module":  "commonjs",
+                                            "moduleResolution":  "node"
+                                        }
+                }
+}
