@@ -1,0 +1,60 @@
+{
+  "slug": "ci-cd",
+  "questions": [
+    {
+      "question": "Quel est l’objectif principal du concept CI/CD - Pipelines de livraison ?",
+      "options": [
+        "Mémoriser des commandes sans contexte",
+        "Construire une pratique fiable et vérifiable",
+        "Remplacer tous les autres outils",
+        "Éviter toute automatisation"
+      ],
+      "answer": 1,
+      "explanation": "Le but est de comprendre le problème, appliquer l’outil correctement et vérifier le résultat."
+    },
+    {
+      "question": "Quelle habitude réduit le plus les erreurs ?",
+      "options": [
+        "Exécuter vite",
+        "Vérifier le contexte avant d’agir",
+        "Ignorer les messages de sortie",
+        "Modifier plusieurs choses à la fois"
+      ],
+      "answer": 1,
+      "explanation": "Vérifier le contexte évite d’appliquer une commande au mauvais endroit ou avec de mauvais paramètres."
+    },
+    {
+      "question": "Quel prérequis est déclaré pour ci-cd ?",
+      "options": [
+        "git-avance, docker",
+        "nginx uniquement",
+        "fastapi uniquement",
+        "rag-pipeline uniquement"
+      ],
+      "answer": 0,
+      "explanation": "Les prérequis suivent les slugs définis dans le frontmatter du cours."
+    },
+    {
+      "question": "Que faut-il conserver après un exercice ?",
+      "options": [
+        "Seulement le résultat final",
+        "Les étapes, commandes et erreurs rencontrées",
+        "Rien, si ça fonctionne",
+        "Uniquement une capture écran"
+      ],
+      "answer": 1,
+      "explanation": "Les étapes et erreurs rendent l’apprentissage réutilisable et facilitent le diagnostic."
+    },
+    {
+      "question": "Quand peut-on considérer un concept comme maîtrisé ?",
+      "options": [
+        "Après une lecture rapide",
+        "Quand quiz, pratique et prérequis sont cohérents",
+        "Dès que le titre est compris",
+        "Avant d’avoir testé"
+      ],
+      "answer": 1,
+      "explanation": "La maîtrise combine compréhension, pratique et respect des dépendances pédagogiques."
+    }
+  ]
+}

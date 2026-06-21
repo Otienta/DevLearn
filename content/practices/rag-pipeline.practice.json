@@ -1,0 +1,71 @@
+{
+  "slug": "rag-pipeline",
+  "exercises": [
+    {
+      "id": "rag-pipeline-exercice-1",
+      "titre": "Identifier les notions clés de RAG pipeline - Recherche augmentée pour LLM",
+      "objectif": "Relier les termes importants à leur rôle concret.",
+      "prerequis": [
+        "Avoir revu llm-prompting"
+      ],
+      "commande": "Découper les documents",
+      "langage": "bash",
+      "etapes": [
+        "Prépare un dossier de notes pour ce concept.",
+        "Lis la section du cours sur RAG pipeline - Recherche augmentée pour LLM.",
+        "Exécute ou simule la commande proposée si ton environnement le permet.",
+        "Note le résultat observé et une question restante."
+      ],
+      "resultat_attendu": "Tu obtiens une note claire avec commande, observation et conclusion.",
+      "erreurs_frequentes": [
+        "Aller trop vite sans lire la sortie",
+        "Oublier le dossier courant",
+        "Ne pas noter les hypothèses testées"
+      ]
+    },
+    {
+      "id": "rag-pipeline-exercice-2",
+      "titre": "Expérimenter RAG pipeline - Recherche augmentée pour LLM en local",
+      "objectif": "Exécuter une petite séquence et vérifier le résultat obtenu.",
+      "prerequis": [
+        "Avoir revu llm-prompting"
+      ],
+      "commande": "Indexer les embeddings",
+      "langage": "bash",
+      "etapes": [
+        "Prépare un dossier de notes pour ce concept.",
+        "Lis la section du cours sur RAG pipeline - Recherche augmentée pour LLM.",
+        "Exécute ou simule la commande proposée si ton environnement le permet.",
+        "Note le résultat observé et une question restante."
+      ],
+      "resultat_attendu": "Tu obtiens une note claire avec commande, observation et conclusion.",
+      "erreurs_frequentes": [
+        "Aller trop vite sans lire la sortie",
+        "Oublier le dossier courant",
+        "Ne pas noter les hypothèses testées"
+      ]
+    },
+    {
+      "id": "rag-pipeline-exercice-3",
+      "titre": "Documenter une procédure RAG pipeline - Recherche augmentée pour LLM",
+      "objectif": "Transformer l’exercice en fiche réutilisable.",
+      "prerequis": [
+        "Avoir revu llm-prompting"
+      ],
+      "commande": "Récupérer les passages utiles",
+      "langage": "bash",
+      "etapes": [
+        "Prépare un dossier de notes pour ce concept.",
+        "Lis la section du cours sur RAG pipeline - Recherche augmentée pour LLM.",
+        "Exécute ou simule la commande proposée si ton environnement le permet.",
+        "Note le résultat observé et une question restante."
+      ],
+      "resultat_attendu": "Tu obtiens une note claire avec commande, observation et conclusion.",
+      "erreurs_frequentes": [
+        "Aller trop vite sans lire la sortie",
+        "Oublier le dossier courant",
+        "Ne pas noter les hypothèses testées"
+      ]
+    }
+  ]
+}

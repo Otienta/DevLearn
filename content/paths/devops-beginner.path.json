@@ -1,0 +1,32 @@
+{
+  "id": "devops-beginner",
+  "title": "DevOps Débutant",
+  "description": "Parcours complet pour maîtriser les fondamentaux DevOps, de Linux à CI/CD.",
+  "domain": "devops",
+  "targetLevel": "débutant",
+  "totalEstimatedTime": 255,
+  "steps": [
+    {
+      "slug": "linux-basics",
+      "order": 1
+    },
+    {
+      "slug": "git-avance",
+      "order": 2
+    },
+    {
+      "slug": "docker",
+      "order": 3
+    },
+    {
+      "slug": "ci-cd",
+      "order": 4,
+      "note": "Recommandé après avoir pratiqué Docker en local"
+    },
+    {
+      "slug": "nginx",
+      "order": 5,
+      "optional": true
+    }
+  ]
+}

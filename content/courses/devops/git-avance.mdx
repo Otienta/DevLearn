@@ -1,0 +1,65 @@
+---
+title: "Git avancé - Historique propre et collaboration"
+domain: "devops"
+slug: "git-avance"
+level: "intermédiaire"
+tags: ["git", "rebase", "merge", "workflow"]
+description: "Comprends les stratégies Git utiles en équipe : rebase, merge, cherry-pick, squash, conflits et retours arrière."
+prerequisites: ["linux-basics"]
+estimatedTime: 50
+difficultyPoints: 3
+ressources:
+  - titre: "Pro Git Book"
+    url: "https://git-scm.com/book/en/v2"
+    type: "doc"
+---
+
+# Git avancé - Historique propre et collaboration
+
+## Définition
+
+Comprends les stratégies Git utiles en équipe : rebase, merge, cherry-pick, squash, conflits et retours arrière.
+
+Ce concept fait partie du domaine devops. Il sert à construire une pratique stable, répétable et compréhensible avant d’aller vers des sujets plus avancés.
+
+## Pourquoi c'est important
+
+Un bon apprentissage technique ne repose pas seulement sur la mémorisation. Il faut savoir reconnaître le problème, choisir l’outil adapté, exécuter les commandes avec prudence et comprendre le résultat obtenu.
+
+Dans une pull request, Git avancé aide à garder un historique lisible et à isoler précisément les changements livrés.
+
+## Comment ça marche
+
+- différence entre merge et rebase
+- cherry-pick pour reprendre un commit précis
+- squash pour nettoyer une branche
+- GitFlow et trunk-based development
+- hooks locaux
+- résolution de conflits
+- revert vs reset
+
+## Exemples réels
+
+Dans un projet professionnel, ce sujet apparaît souvent lorsqu’il faut diagnostiquer un problème, automatiser une étape ou rendre une livraison plus fiable. Le réflexe à développer est de partir d’un objectif clair, puis de vérifier chaque étape avec une commande ou un résultat observable.
+
+## Commandes ou actions essentielles
+
+```bash
+git log --oneline --graph
+git rebase main
+git cherry-pick <sha>
+git merge --no-ff feature
+git revert <sha>
+```
+
+## Erreurs fréquentes
+
+- Appliquer une commande sans vérifier le contexte courant.
+- Confondre l’objectif métier et le détail technique de l’outil.
+- Copier une solution sans comprendre les paramètres utilisés.
+- Oublier de documenter les décisions prises pendant l’exercice.
+
+## Mini résumé
+
+> Git avancé - Historique propre et collaboration = une brique pratique pour progresser avec méthode.
+> Comprendre les concepts, vérifier les résultats, puis automatiser seulement ce qui est clair.

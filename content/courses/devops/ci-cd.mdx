@@ -1,0 +1,66 @@
+---
+title: "CI/CD - Pipelines de livraison"
+domain: "devops"
+slug: "ci-cd"
+level: "intermédiaire"
+tags: ["ci-cd", "pipeline", "github-actions", "azure-pipelines"]
+description: "Structure un pipeline automatisé pour tester, construire et déployer une application avec des étapes fiables."
+prerequisites: ["git-avance", "docker"]
+estimatedTime: 60
+difficultyPoints: 4
+ressources:
+  - titre: "GitHub Actions"
+    url: "https://docs.github.com/actions"
+    type: "doc"
+  - titre: "Azure Pipelines"
+    url: "https://learn.microsoft.com/azure/devops/pipelines/"
+    type: "doc"
+---
+
+# CI/CD - Pipelines de livraison
+
+## Définition
+
+Structure un pipeline automatisé pour tester, construire et déployer une application avec des étapes fiables.
+
+Ce concept fait partie du domaine devops. Il sert à construire une pratique stable, répétable et compréhensible avant d’aller vers des sujets plus avancés.
+
+## Pourquoi c'est important
+
+Un bon apprentissage technique ne repose pas seulement sur la mémorisation. Il faut savoir reconnaître le problème, choisir l’outil adapté, exécuter les commandes avec prudence et comprendre le résultat obtenu.
+
+Une pipeline CI/CD réduit les déploiements manuels, détecte les régressions tôt et rend la livraison plus prévisible.
+
+## Comment ça marche
+
+- intégration continue
+- livraison continue
+- stages et jobs
+- artifacts
+- environments
+- rollback
+- comparaison GitHub Actions et Azure Pipelines
+
+## Exemples réels
+
+Dans un projet professionnel, ce sujet apparaît souvent lorsqu’il faut diagnostiquer un problème, automatiser une étape ou rendre une livraison plus fiable. Le réflexe à développer est de partir d’un objectif clair, puis de vérifier chaque étape avec une commande ou un résultat observable.
+
+## Commandes ou actions essentielles
+
+```bash
+npm test
+docker build -t app .
+git push origin develop
+```
+
+## Erreurs fréquentes
+
+- Appliquer une commande sans vérifier le contexte courant.
+- Confondre l’objectif métier et le détail technique de l’outil.
+- Copier une solution sans comprendre les paramètres utilisés.
+- Oublier de documenter les décisions prises pendant l’exercice.
+
+## Mini résumé
+
+> CI/CD - Pipelines de livraison = une brique pratique pour progresser avec méthode.
+> Comprendre les concepts, vérifier les résultats, puis automatiser seulement ce qui est clair.
