@@ -36,70 +36,80 @@ function getDomainConcepts(concepts: CourseMeta[], domain: Domain): CourseMeta[]
 export default async function DashboardPage() {
   const [concepts, paths] = await Promise.all([getAllCourseMeta(), getAllLearningPaths()])
   const emptyProgress = {}
-  const unlockedConcepts = concepts.filter((concept) => isUnlocked(concept.slug, concepts, emptyProgress)).slice(0, 4)
+  const unlockedConcepts = concepts
+    .filter((concept) => isUnlocked(concept.slug, concepts, emptyProgress))
+    .sort((a, b) => a.difficultyPoints - b.difficultyPoints || a.title.localeCompare(b.title))
+    .slice(0, 3)
   const totalEstimatedTime = concepts.reduce((sum, concept) => sum + concept.estimatedTime, 0)
 
   return (
     <div className="mx-auto w-full max-w-6xl px-4 py-8 sm:px-6 lg:py-10">
-      <section className="mb-8">
-        <p className="text-sm font-medium uppercase tracking-wide text-slate-500">Dashboard</p>
-        <h1 className="mt-2 text-3xl font-semibold tracking-tight text-slate-950 dark:text-white">DevLearn</h1>
-        <p className="mt-3 max-w-2xl text-slate-600 dark:text-slate-300">
-          Suis ta progression DevOps, Python et AI/ML depuis un espace personnel sobre et orienté pratique.
-        </p>
+      <section className="rounded-lg border border-slate-200 bg-white p-6 shadow-sm dark:border-slate-800 dark:bg-slate-950 sm:p-8">
+        <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
+          <div className="max-w-2xl">
+            <p className="text-sm font-medium uppercase tracking-wide text-slate-500">Dashboard</p>
+            <h1 className="mt-2 text-4xl font-semibold tracking-tight text-slate-950 dark:text-white">DevLearn</h1>
+            <p className="mt-3 text-base leading-7 text-slate-600 dark:text-slate-300">
+              Un hub personnel pour apprendre DevOps, Python et AI/ML avec des cours courts, des quiz et des exercices pratiques.
+            </p>
+          </div>
+          <div className="min-w-64 rounded-lg bg-slate-50 p-4 dark:bg-slate-900">
+            <ProgressBar value={0} label={`0 concepts maîtrisés sur ${concepts.length}`} />
+            <p className="mt-3 text-sm text-slate-600 dark:text-slate-300">0 concepts maîtrisés sur {concepts.length} · 0/{totalEstimatedTime} min de contenu investi</p>
+          </div>
+        </div>
       </section>
 
-      <section className="grid gap-4 md:grid-cols-3">
+      <section className="mt-8 grid gap-4 md:grid-cols-3">
         {domainConfigs.map((domain) => {
           const domainConcepts = getDomainConcepts(concepts, domain.id)
 
           return (
-            <Link
-              key={domain.id}
-              href={`/${domain.id}`}
-              className="rounded-lg border border-slate-200 bg-white p-5 shadow-sm transition hover:border-domain-devops-500 dark:border-slate-800 dark:bg-slate-950"
-            >
-              <div className="flex items-center justify-between gap-3">
+            <div key={domain.id} className="rounded-lg border border-slate-200 bg-white p-5 shadow-sm dark:border-slate-800 dark:bg-slate-950">
+              <div className="flex items-start justify-between gap-3">
                 <div>
-                  <h2 className="font-semibold text-slate-950 dark:text-white">{domain.label}</h2>
-                  <p className="mt-1 text-sm text-slate-600 dark:text-slate-300">{domain.description}</p>
+                  <p className="text-xs font-medium uppercase tracking-wide text-slate-500">Domaine</p>
+                  <h2 className="mt-1 text-xl font-semibold text-slate-950 dark:text-white">{domain.label}</h2>
+                  <p className="mt-2 text-sm leading-6 text-slate-600 dark:text-slate-300">{domain.description}</p>
                 </div>
-                <span className={domain.colorClass}>{domain.icon}</span>
+                <span className={`rounded-lg bg-slate-100 px-2.5 py-2 text-sm font-semibold dark:bg-slate-900 ${domain.colorClass}`}>{domain.icon}</span>
               </div>
               <ProgressBar value={0} label={`${domainConcepts.length} concepts`} className="mt-5" />
-            </Link>
+              <Link href={`/${domain.id}`} className="mt-5 inline-flex rounded-lg border border-slate-200 px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100 dark:border-slate-800 dark:text-slate-200 dark:hover:bg-slate-900">
+                Explorer
+              </Link>
+            </div>
           )
         })}
       </section>
 
-      <section className="mt-8 grid gap-4 md:grid-cols-3">
-        <div className="rounded-lg border border-slate-200 bg-white p-5 dark:border-slate-800 dark:bg-slate-950">
-          <p className="text-sm text-slate-500">Concepts maîtrisés</p>
-          <p className="mt-2 text-2xl font-semibold text-slate-950 dark:text-white">0/{concepts.length}</p>
-        </div>
-        <div className="rounded-lg border border-slate-200 bg-white p-5 dark:border-slate-800 dark:bg-slate-950">
-          <p className="text-sm text-slate-500">Temps investi estimé</p>
-          <p className="mt-2 text-2xl font-semibold text-slate-950 dark:text-white">0/{totalEstimatedTime} min</p>
-        </div>
-        <div className="rounded-lg border border-slate-200 bg-white p-5 dark:border-slate-800 dark:bg-slate-950">
-          <p className="text-sm text-slate-500">Parcours disponibles</p>
-          <p className="mt-2 text-2xl font-semibold text-slate-950 dark:text-white">{paths.length}</p>
-        </div>
-      </section>
-
       <section className="mt-10">
-        <h2 className="text-xl font-semibold text-slate-950 dark:text-white">Concepts débloqués</h2>
+        <div className="flex items-end justify-between gap-4">
+          <div>
+            <p className="text-sm font-medium uppercase tracking-wide text-slate-500">Par où commencer</p>
+            <h2 className="mt-1 text-2xl font-semibold text-slate-950 dark:text-white">Concepts accessibles</h2>
+          </div>
+          <span className="text-sm text-slate-500">{paths.length} parcours</span>
+        </div>
         {unlockedConcepts.length > 0 ? (
-          <div className="mt-4 grid gap-4 md:grid-cols-2">
+          <div className="mt-4 grid gap-4 md:grid-cols-3">
             {unlockedConcepts.map((concept) => (
               <ConceptCard key={concept.slug} concept={concept} />
             ))}
           </div>
         ) : (
-          <p className="mt-3 rounded-lg border border-dashed border-slate-300 p-6 text-slate-600 dark:border-slate-800 dark:text-slate-300">
-            Aucun contenu n’est encore disponible. Le Bloc 4 ajoutera les cours, quiz, pratiques et parcours.
+          <p className="mt-4 rounded-lg border border-dashed border-slate-300 p-6 text-slate-600 dark:border-slate-800 dark:text-slate-300">
+            Aucun concept accessible pour le moment.
           </p>
         )}
+      </section>
+
+      <section className="mt-10 rounded-lg border border-dashed border-slate-300 bg-white p-6 dark:border-slate-800 dark:bg-slate-950">
+        <p className="text-sm font-medium uppercase tracking-wide text-slate-500">Continuer</p>
+        <h2 className="mt-1 text-2xl font-semibold text-slate-950 dark:text-white">Dernières visites</h2>
+        <p className="mt-3 text-sm leading-6 text-slate-600 dark:text-slate-300">
+          Les derniers concepts visités apparaîtront ici quand la progression localStorage sera branchée sur un composant client du dashboard.
+        </p>
       </section>
     </div>
   )

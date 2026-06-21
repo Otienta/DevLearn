@@ -10,12 +10,10 @@ interface PracticeBoxProps {
 }
 
 function ExerciseCard({
-  slug,
   exercise,
   isDone,
   onToggle
 }: {
-  slug: string
   exercise: PracticeExercise
   isDone: boolean
   onToggle: (exerciseId: string, nextValue: boolean) => void
@@ -40,7 +38,7 @@ function ExerciseCard({
           <h3 className="text-lg font-semibold text-slate-950 dark:text-white">{exercise.titre}</h3>
           <p className="mt-1 text-sm leading-6 text-slate-600 dark:text-slate-300">{exercise.objectif}</p>
         </div>
-        <label className="flex shrink-0 items-center gap-2 text-sm text-slate-600 dark:text-slate-300">
+        <label className="flex shrink-0 items-center gap-2 rounded-full border border-slate-200 px-3 py-1.5 text-sm text-slate-600 dark:border-slate-800 dark:text-slate-300">
           <input
             type="checkbox"
             checked={isDone}
@@ -53,7 +51,7 @@ function ExerciseCard({
 
       {exercise.prerequis && exercise.prerequis.length > 0 && (
         <div className="mt-4 rounded-lg bg-slate-50 p-3 dark:bg-slate-900">
-          <p className="text-sm font-medium text-slate-900 dark:text-slate-100">PrÃ©requis</p>
+          <p className="text-sm font-medium text-slate-900 dark:text-slate-100">Prérequis</p>
           <ul className="mt-2 list-disc space-y-1 pl-5 text-sm text-slate-600 dark:text-slate-300">
             {exercise.prerequis.map((prerequisite) => (
               <li key={prerequisite}>{prerequisite}</li>
@@ -62,33 +60,38 @@ function ExerciseCard({
         </div>
       )}
 
-      <ol className="mt-4 list-decimal space-y-2 pl-5 text-sm leading-6 text-slate-700 dark:text-slate-200">
-        {exercise.etapes.map((step) => (
-          <li key={step}>{step}</li>
+      <ol className="mt-5 space-y-3 text-sm leading-6 text-slate-700 dark:text-slate-200">
+        {exercise.etapes.map((step, index) => (
+          <li key={step} className="flex gap-3">
+            <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-domain-devops-100 text-xs font-semibold text-domain-devops-700 ring-1 ring-domain-devops-500/30 dark:bg-slate-900 dark:text-domain-devops-100">
+              {index + 1}
+            </span>
+            <span className="pt-0.5">{step}</span>
+          </li>
         ))}
       </ol>
 
       {copyableText && (
-        <div className="mt-4 overflow-hidden rounded-lg border border-slate-800 bg-slate-950">
+        <div className="mt-5 overflow-hidden rounded-lg border border-slate-800 bg-slate-950">
           <div className="flex items-center justify-between border-b border-slate-800 px-4 py-2">
             <span className="text-xs text-slate-400">{exercise.langage ?? 'texte'}</span>
-            <button type="button" onClick={copyText} className="rounded-md px-2 py-1 text-xs text-slate-300 hover:bg-slate-800">
-              {copied ? 'CopiÃ©' : 'Copier'}
+            <button type="button" onClick={copyText} className="rounded-md px-2 py-1 text-xs text-slate-300 hover:bg-slate-800 hover:text-white">
+              {copied ? 'Copié' : 'Copier'}
             </button>
           </div>
-          <pre className="overflow-x-auto p-4 text-sm text-slate-100">
+          <pre className="overflow-x-auto p-4 text-sm leading-6 text-slate-100">
             <code>{copyableText}</code>
           </pre>
         </div>
       )}
 
       <p className="mt-4 rounded-lg bg-green-50 p-3 text-sm text-green-900 dark:bg-green-950 dark:text-green-100">
-        RÃ©sultat attendu : {exercise.resultat_attendu}
+        Résultat attendu : {exercise.resultat_attendu}
       </p>
 
       {exercise.erreurs_frequentes && exercise.erreurs_frequentes.length > 0 && (
         <details className="mt-4 text-sm text-slate-600 dark:text-slate-300">
-          <summary className="cursor-pointer font-medium text-slate-900 dark:text-slate-100">Erreurs frÃ©quentes</summary>
+          <summary className="cursor-pointer font-medium text-slate-900 dark:text-slate-100">Erreurs fréquentes</summary>
           <ul className="mt-2 list-disc space-y-1 pl-5">
             {exercise.erreurs_frequentes.map((error) => (
               <li key={error}>{error}</li>
@@ -122,12 +125,13 @@ export function PracticeBox({ practice }: PracticeBoxProps) {
 
   return (
     <section className="space-y-5">
-      <ProgressBar value={percentage} label={`${doneIds.length}/${practice.exercises.length} exercices terminÃ©s`} />
+      <div className="rounded-lg border border-slate-200 bg-white p-4 dark:border-slate-800 dark:bg-slate-950">
+        <ProgressBar value={percentage} label={`${doneIds.length}/${practice.exercises.length} exercices complétés`} />
+      </div>
 
       {practice.exercises.map((exercise) => (
         <ExerciseCard
           key={exercise.id}
-          slug={practice.slug}
           exercise={exercise}
           isDone={doneIds.includes(exercise.id)}
           onToggle={toggleExercise}
