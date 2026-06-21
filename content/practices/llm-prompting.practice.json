@@ -1,0 +1,71 @@
+{
+  "slug": "llm-prompting",
+  "exercises": [
+    {
+      "id": "llm-prompting-exercice-1",
+      "titre": "Identifier les notions clés de LLM prompting - Dialoguer avec un modèle",
+      "objectif": "Relier les termes importants à leur rôle concret.",
+      "prerequis": [
+        "Terminal ou éditeur de texte disponible"
+      ],
+      "commande": "Définir le rôle du modèle",
+      "langage": "bash",
+      "etapes": [
+        "Prépare un dossier de notes pour ce concept.",
+        "Lis la section du cours sur LLM prompting - Dialoguer avec un modèle.",
+        "Exécute ou simule la commande proposée si ton environnement le permet.",
+        "Note le résultat observé et une question restante."
+      ],
+      "resultat_attendu": "Tu obtiens une note claire avec commande, observation et conclusion.",
+      "erreurs_frequentes": [
+        "Aller trop vite sans lire la sortie",
+        "Oublier le dossier courant",
+        "Ne pas noter les hypothèses testées"
+      ]
+    },
+    {
+      "id": "llm-prompting-exercice-2",
+      "titre": "Expérimenter LLM prompting - Dialoguer avec un modèle en local",
+      "objectif": "Exécuter une petite séquence et vérifier le résultat obtenu.",
+      "prerequis": [
+        "Terminal ou éditeur de texte disponible"
+      ],
+      "commande": "Fournir des exemples",
+      "langage": "bash",
+      "etapes": [
+        "Prépare un dossier de notes pour ce concept.",
+        "Lis la section du cours sur LLM prompting - Dialoguer avec un modèle.",
+        "Exécute ou simule la commande proposée si ton environnement le permet.",
+        "Note le résultat observé et une question restante."
+      ],
+      "resultat_attendu": "Tu obtiens une note claire avec commande, observation et conclusion.",
+      "erreurs_frequentes": [
+        "Aller trop vite sans lire la sortie",
+        "Oublier le dossier courant",
+        "Ne pas noter les hypothèses testées"
+      ]
+    },
+    {
+      "id": "llm-prompting-exercice-3",
+      "titre": "Documenter une procédure LLM prompting - Dialoguer avec un modèle",
+      "objectif": "Transformer l’exercice en fiche réutilisable.",
+      "prerequis": [
+        "Terminal ou éditeur de texte disponible"
+      ],
+      "commande": "Demander un format de sortie précis",
+      "langage": "bash",
+      "etapes": [
+        "Prépare un dossier de notes pour ce concept.",
+        "Lis la section du cours sur LLM prompting - Dialoguer avec un modèle.",
+        "Exécute ou simule la commande proposée si ton environnement le permet.",
+        "Note le résultat observé et une question restante."
+      ],
+      "resultat_attendu": "Tu obtiens une note claire avec commande, observation et conclusion.",
+      "erreurs_frequentes": [
+        "Aller trop vite sans lire la sortie",
+        "Oublier le dossier courant",
+        "Ne pas noter les hypothèses testées"
+      ]
+    }
+  ]
+}

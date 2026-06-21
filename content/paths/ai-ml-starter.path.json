@@ -1,0 +1,19 @@
+{
+  "id": "ai-ml-starter",
+  "title": "AI/ML Starter",
+  "description": "Parcours d’entrée pour comprendre le prompting LLM puis construire un pipeline RAG.",
+  "domain": "ai-ml",
+  "targetLevel": "débutant",
+  "totalEstimatedTime": 135,
+  "steps": [
+    {
+      "slug": "llm-prompting",
+      "order": 1
+    },
+    {
+      "slug": "rag-pipeline",
+      "order": 2,
+      "note": "Base utile avant un futur module sur les agents IA"
+    }
+  ]
+}

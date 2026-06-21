@@ -1,0 +1,71 @@
+{
+  "slug": "bases-python",
+  "exercises": [
+    {
+      "id": "bases-python-exercice-1",
+      "titre": "Identifier les notions clés de Python - Bases et environnement projet",
+      "objectif": "Relier les termes importants à leur rôle concret.",
+      "prerequis": [
+        "Terminal ou éditeur de texte disponible"
+      ],
+      "commande": "python -m venv .venv",
+      "langage": "bash",
+      "etapes": [
+        "Prépare un dossier de notes pour ce concept.",
+        "Lis la section du cours sur Python - Bases et environnement projet.",
+        "Exécute ou simule la commande proposée si ton environnement le permet.",
+        "Note le résultat observé et une question restante."
+      ],
+      "resultat_attendu": "Tu obtiens une note claire avec commande, observation et conclusion.",
+      "erreurs_frequentes": [
+        "Aller trop vite sans lire la sortie",
+        "Oublier le dossier courant",
+        "Ne pas noter les hypothèses testées"
+      ]
+    },
+    {
+      "id": "bases-python-exercice-2",
+      "titre": "Expérimenter Python - Bases et environnement projet en local",
+      "objectif": "Exécuter une petite séquence et vérifier le résultat obtenu.",
+      "prerequis": [
+        "Terminal ou éditeur de texte disponible"
+      ],
+      "commande": "python -m pip install pytest",
+      "langage": "bash",
+      "etapes": [
+        "Prépare un dossier de notes pour ce concept.",
+        "Lis la section du cours sur Python - Bases et environnement projet.",
+        "Exécute ou simule la commande proposée si ton environnement le permet.",
+        "Note le résultat observé et une question restante."
+      ],
+      "resultat_attendu": "Tu obtiens une note claire avec commande, observation et conclusion.",
+      "erreurs_frequentes": [
+        "Aller trop vite sans lire la sortie",
+        "Oublier le dossier courant",
+        "Ne pas noter les hypothèses testées"
+      ]
+    },
+    {
+      "id": "bases-python-exercice-3",
+      "titre": "Documenter une procédure Python - Bases et environnement projet",
+      "objectif": "Transformer l’exercice en fiche réutilisable.",
+      "prerequis": [
+        "Terminal ou éditeur de texte disponible"
+      ],
+      "commande": "python -m pytest",
+      "langage": "bash",
+      "etapes": [
+        "Prépare un dossier de notes pour ce concept.",
+        "Lis la section du cours sur Python - Bases et environnement projet.",
+        "Exécute ou simule la commande proposée si ton environnement le permet.",
+        "Note le résultat observé et une question restante."
+      ],
+      "resultat_attendu": "Tu obtiens une note claire avec commande, observation et conclusion.",
+      "erreurs_frequentes": [
+        "Aller trop vite sans lire la sortie",
+        "Oublier le dossier courant",
+        "Ne pas noter les hypothèses testées"
+      ]
+    }
+  ]
+}

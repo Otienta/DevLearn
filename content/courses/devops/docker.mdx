@@ -1,0 +1,67 @@
+---
+title: "Docker - Images et containers"
+domain: "devops"
+slug: "docker"
+level: "débutant"
+tags: ["docker", "containers", "images", "compose"]
+description: "Apprends à packager et lancer des applications dans des containers Docker isolés et reproductibles."
+prerequisites: ["linux-basics"]
+estimatedTime: 45
+difficultyPoints: 3
+ressources:
+  - titre: "Documentation officielle Docker"
+    url: "https://docs.docker.com/get-started/"
+    type: "doc"
+  - titre: "Docker Compose getting started"
+    url: "https://docs.docker.com/compose/gettingstarted/"
+    type: "doc"
+---
+
+# Docker - Images et containers
+
+## Définition
+
+Apprends à packager et lancer des applications dans des containers Docker isolés et reproductibles.
+
+Ce concept fait partie du domaine devops. Il sert à construire une pratique stable, répétable et compréhensible avant d’aller vers des sujets plus avancés.
+
+## Pourquoi c'est important
+
+Un bon apprentissage technique ne repose pas seulement sur la mémorisation. Il faut savoir reconnaître le problème, choisir l’outil adapté, exécuter les commandes avec prudence et comprendre le résultat obtenu.
+
+Docker permet de lancer la même application sur un poste local, une CI ou un serveur avec un environnement identique.
+
+## Comment ça marche
+
+- image vs container
+- Dockerfile et layers
+- build et run
+- volumes persistants
+- réseaux Docker
+- Docker Compose pour plusieurs services
+
+## Exemples réels
+
+Dans un projet professionnel, ce sujet apparaît souvent lorsqu’il faut diagnostiquer un problème, automatiser une étape ou rendre une livraison plus fiable. Le réflexe à développer est de partir d’un objectif clair, puis de vérifier chaque étape avec une commande ou un résultat observable.
+
+## Commandes ou actions essentielles
+
+```bash
+docker pull nginx
+docker run -d -p 8080:80 nginx
+docker ps
+docker build -t mon-app .
+docker compose up
+```
+
+## Erreurs fréquentes
+
+- Appliquer une commande sans vérifier le contexte courant.
+- Confondre l’objectif métier et le détail technique de l’outil.
+- Copier une solution sans comprendre les paramètres utilisés.
+- Oublier de documenter les décisions prises pendant l’exercice.
+
+## Mini résumé
+
+> Docker - Images et containers = une brique pratique pour progresser avec méthode.
+> Comprendre les concepts, vérifier les résultats, puis automatiser seulement ce qui est clair.

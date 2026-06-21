@@ -1,0 +1,63 @@
+---
+title: "NGINX - Serveur web et reverse proxy"
+domain: "devops"
+slug: "nginx"
+level: "intermédiaire"
+tags: ["nginx", "reverse-proxy", "ssl", "load-balancing"]
+description: "Utilise NGINX pour servir du statique, router du trafic HTTP et exposer une application derrière un reverse proxy."
+prerequisites: ["linux-basics"]
+estimatedTime: 40
+difficultyPoints: 3
+ressources:
+  - titre: "NGINX beginner guide"
+    url: "https://nginx.org/en/docs/beginners_guide.html"
+    type: "doc"
+---
+
+# NGINX - Serveur web et reverse proxy
+
+## Définition
+
+Utilise NGINX pour servir du statique, router du trafic HTTP et exposer une application derrière un reverse proxy.
+
+Ce concept fait partie du domaine devops. Il sert à construire une pratique stable, répétable et compréhensible avant d’aller vers des sujets plus avancés.
+
+## Pourquoi c'est important
+
+Un bon apprentissage technique ne repose pas seulement sur la mémorisation. Il faut savoir reconnaître le problème, choisir l’outil adapté, exécuter les commandes avec prudence et comprendre le résultat obtenu.
+
+NGINX est souvent placé devant une API pour gérer TLS, compression, fichiers statiques et routage vers plusieurs instances.
+
+## Comment ça marche
+
+- rôle de NGINX
+- serveur statique
+- reverse proxy
+- load balancing
+- SSL/TLS
+- fichier de configuration
+- différence avec Apache
+
+## Exemples réels
+
+Dans un projet professionnel, ce sujet apparaît souvent lorsqu’il faut diagnostiquer un problème, automatiser une étape ou rendre une livraison plus fiable. Le réflexe à développer est de partir d’un objectif clair, puis de vérifier chaque étape avec une commande ou un résultat observable.
+
+## Commandes ou actions essentielles
+
+```bash
+nginx -t
+systemctl reload nginx
+curl -I http://localhost
+```
+
+## Erreurs fréquentes
+
+- Appliquer une commande sans vérifier le contexte courant.
+- Confondre l’objectif métier et le détail technique de l’outil.
+- Copier une solution sans comprendre les paramètres utilisés.
+- Oublier de documenter les décisions prises pendant l’exercice.
+
+## Mini résumé
+
+> NGINX - Serveur web et reverse proxy = une brique pratique pour progresser avec méthode.
+> Comprendre les concepts, vérifier les résultats, puis automatiser seulement ce qui est clair.

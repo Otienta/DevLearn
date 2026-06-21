@@ -1,0 +1,71 @@
+{
+  "slug": "fastapi",
+  "exercises": [
+    {
+      "id": "fastapi-exercice-1",
+      "titre": "Identifier les notions clés de FastAPI - API Python moderne",
+      "objectif": "Relier les termes importants à leur rôle concret.",
+      "prerequis": [
+        "Avoir revu bases-python"
+      ],
+      "commande": "pip install fastapi uvicorn",
+      "langage": "bash",
+      "etapes": [
+        "Prépare un dossier de notes pour ce concept.",
+        "Lis la section du cours sur FastAPI - API Python moderne.",
+        "Exécute ou simule la commande proposée si ton environnement le permet.",
+        "Note le résultat observé et une question restante."
+      ],
+      "resultat_attendu": "Tu obtiens une note claire avec commande, observation et conclusion.",
+      "erreurs_frequentes": [
+        "Aller trop vite sans lire la sortie",
+        "Oublier le dossier courant",
+        "Ne pas noter les hypothèses testées"
+      ]
+    },
+    {
+      "id": "fastapi-exercice-2",
+      "titre": "Expérimenter FastAPI - API Python moderne en local",
+      "objectif": "Exécuter une petite séquence et vérifier le résultat obtenu.",
+      "prerequis": [
+        "Avoir revu bases-python"
+      ],
+      "commande": "uvicorn main:app --reload",
+      "langage": "bash",
+      "etapes": [
+        "Prépare un dossier de notes pour ce concept.",
+        "Lis la section du cours sur FastAPI - API Python moderne.",
+        "Exécute ou simule la commande proposée si ton environnement le permet.",
+        "Note le résultat observé et une question restante."
+      ],
+      "resultat_attendu": "Tu obtiens une note claire avec commande, observation et conclusion.",
+      "erreurs_frequentes": [
+        "Aller trop vite sans lire la sortie",
+        "Oublier le dossier courant",
+        "Ne pas noter les hypothèses testées"
+      ]
+    },
+    {
+      "id": "fastapi-exercice-3",
+      "titre": "Documenter une procédure FastAPI - API Python moderne",
+      "objectif": "Transformer l’exercice en fiche réutilisable.",
+      "prerequis": [
+        "Avoir revu bases-python"
+      ],
+      "commande": "curl http://localhost:8000/docs",
+      "langage": "bash",
+      "etapes": [
+        "Prépare un dossier de notes pour ce concept.",
+        "Lis la section du cours sur FastAPI - API Python moderne.",
+        "Exécute ou simule la commande proposée si ton environnement le permet.",
+        "Note le résultat observé et une question restante."
+      ],
+      "resultat_attendu": "Tu obtiens une note claire avec commande, observation et conclusion.",
+      "erreurs_frequentes": [
+        "Aller trop vite sans lire la sortie",
+        "Oublier le dossier courant",
+        "Ne pas noter les hypothèses testées"
+      ]
+    }
+  ]
+}

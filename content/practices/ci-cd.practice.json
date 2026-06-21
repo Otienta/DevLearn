@@ -1,0 +1,74 @@
+{
+  "slug": "ci-cd",
+  "exercises": [
+    {
+      "id": "ci-cd-exercice-1",
+      "titre": "Identifier les notions clés de CI/CD - Pipelines de livraison",
+      "objectif": "Relier les termes importants à leur rôle concret.",
+      "prerequis": [
+        "Avoir revu git-avance",
+        "Avoir revu docker"
+      ],
+      "commande": "npm test",
+      "langage": "bash",
+      "etapes": [
+        "Prépare un dossier de notes pour ce concept.",
+        "Lis la section du cours sur CI/CD - Pipelines de livraison.",
+        "Exécute ou simule la commande proposée si ton environnement le permet.",
+        "Note le résultat observé et une question restante."
+      ],
+      "resultat_attendu": "Tu obtiens une note claire avec commande, observation et conclusion.",
+      "erreurs_frequentes": [
+        "Aller trop vite sans lire la sortie",
+        "Oublier le dossier courant",
+        "Ne pas noter les hypothèses testées"
+      ]
+    },
+    {
+      "id": "ci-cd-exercice-2",
+      "titre": "Expérimenter CI/CD - Pipelines de livraison en local",
+      "objectif": "Exécuter une petite séquence et vérifier le résultat obtenu.",
+      "prerequis": [
+        "Avoir revu git-avance",
+        "Avoir revu docker"
+      ],
+      "commande": "docker build -t app .",
+      "langage": "bash",
+      "etapes": [
+        "Prépare un dossier de notes pour ce concept.",
+        "Lis la section du cours sur CI/CD - Pipelines de livraison.",
+        "Exécute ou simule la commande proposée si ton environnement le permet.",
+        "Note le résultat observé et une question restante."
+      ],
+      "resultat_attendu": "Tu obtiens une note claire avec commande, observation et conclusion.",
+      "erreurs_frequentes": [
+        "Aller trop vite sans lire la sortie",
+        "Oublier le dossier courant",
+        "Ne pas noter les hypothèses testées"
+      ]
+    },
+    {
+      "id": "ci-cd-exercice-3",
+      "titre": "Documenter une procédure CI/CD - Pipelines de livraison",
+      "objectif": "Transformer l’exercice en fiche réutilisable.",
+      "prerequis": [
+        "Avoir revu git-avance",
+        "Avoir revu docker"
+      ],
+      "commande": "git push origin develop",
+      "langage": "bash",
+      "etapes": [
+        "Prépare un dossier de notes pour ce concept.",
+        "Lis la section du cours sur CI/CD - Pipelines de livraison.",
+        "Exécute ou simule la commande proposée si ton environnement le permet.",
+        "Note le résultat observé et une question restante."
+      ],
+      "resultat_attendu": "Tu obtiens une note claire avec commande, observation et conclusion.",
+      "erreurs_frequentes": [
+        "Aller trop vite sans lire la sortie",
+        "Oublier le dossier courant",
+        "Ne pas noter les hypothèses testées"
+      ]
+    }
+  ]
+}
