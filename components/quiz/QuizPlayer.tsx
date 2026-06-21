@@ -18,7 +18,7 @@ export function QuizPlayer({ quiz, canMaster }: QuizPlayerProps) {
   const [isFinished, setIsFinished] = useState(false)
 
   const currentQuestion = quiz.questions[currentIndex]
-  const progress = quiz.questions.length === 0 ? 0 : Math.round((currentIndex / quiz.questions.length) * 100)
+  const progress = quiz.questions.length === 0 ? 0 : Math.round(((currentIndex + 1) / quiz.questions.length) * 100)
 
   function chooseAnswer(answerIndex: number): void {
     if (selectedAnswer !== null) {
@@ -26,17 +26,18 @@ export function QuizPlayer({ quiz, canMaster }: QuizPlayerProps) {
     }
 
     setSelectedAnswer(answerIndex)
-    if (answerIndex === currentQuestion.answer) {
-      setScore((currentScore) => currentScore + 1)
-    }
   }
 
   function goNext(): void {
+    if (selectedAnswer === null) {
+      return
+    }
+
     const nextIndex = currentIndex + 1
+    const nextScore = selectedAnswer === currentQuestion.answer ? score + 1 : score
 
     if (nextIndex >= quiz.questions.length) {
-      const finalScore = selectedAnswer === currentQuestion.answer ? score + 1 : score
-      const percentage = quiz.questions.length === 0 ? 0 : Math.round((finalScore / quiz.questions.length) * 100)
+      const percentage = quiz.questions.length === 0 ? 0 : Math.round((nextScore / quiz.questions.length) * 100)
 
       updateQuizScore(quiz.slug, percentage)
       if (percentage >= 80 && canMaster) {
@@ -45,10 +46,12 @@ export function QuizPlayer({ quiz, canMaster }: QuizPlayerProps) {
         setConceptStatus(quiz.slug, 'in-progress')
       }
 
+      setScore(nextScore)
       setIsFinished(true)
       return
     }
 
+    setScore(nextScore)
     setCurrentIndex(nextIndex)
     setSelectedAnswer(null)
   }
@@ -74,34 +77,36 @@ export function QuizPlayer({ quiz, canMaster }: QuizPlayerProps) {
 
   return (
     <section className="rounded-lg border border-slate-200 bg-white p-6 shadow-sm dark:border-slate-800 dark:bg-slate-950">
-      <ProgressBar value={progress} label={`Question ${currentIndex + 1}/${quiz.questions.length}`} />
+      <ProgressBar value={progress} label={`Question ${currentIndex + 1} sur ${quiz.questions.length}`} />
 
-      <h2 className="mt-6 text-xl font-semibold text-slate-950 dark:text-white">{currentQuestion.question}</h2>
+      <div key={currentIndex} className="animate-[question-fade_200ms_ease-out]">
+        <h2 className="mt-6 text-xl font-semibold text-slate-950 dark:text-white">{currentQuestion.question}</h2>
 
-      <div className="mt-5 space-y-3">
-        {currentQuestion.options.map((option, optionIndex) => {
-          const isSelected = selectedAnswer === optionIndex
-          const isCorrect = currentQuestion.answer === optionIndex
-          const feedbackClass =
-            selectedAnswer === null
-              ? 'border-slate-200 hover:border-domain-devops-500 dark:border-slate-800'
-              : isCorrect
-                ? 'border-green-400 bg-green-50 text-green-900 dark:border-green-700 dark:bg-green-950 dark:text-green-100'
-                : isSelected
-                  ? 'border-red-400 bg-red-50 text-red-900 dark:border-red-700 dark:bg-red-950 dark:text-red-100'
-                  : 'border-slate-200 opacity-70 dark:border-slate-800'
+        <div className="mt-5 space-y-3">
+          {currentQuestion.options.map((option, optionIndex) => {
+            const isSelected = selectedAnswer === optionIndex
+            const isCorrect = currentQuestion.answer === optionIndex
+            const feedbackClass =
+              selectedAnswer === null
+                ? 'border-slate-200 hover:border-domain-devops-500 dark:border-slate-800'
+                : isCorrect
+                  ? 'border-green-500 bg-green-50 text-green-900 dark:border-green-700 dark:bg-green-950 dark:text-green-100'
+                  : isSelected
+                    ? 'border-red-500 bg-red-50 text-red-900 dark:border-red-700 dark:bg-red-950 dark:text-red-100'
+                    : 'border-slate-200 opacity-70 dark:border-slate-800'
 
-          return (
-            <button
-              key={option}
-              type="button"
-              onClick={() => chooseAnswer(optionIndex)}
-              className={`w-full rounded-lg border px-4 py-3 text-left text-sm transition ${feedbackClass}`}
-            >
-              {option}
-            </button>
-          )
-        })}
+            return (
+              <button
+                key={option}
+                type="button"
+                onClick={() => chooseAnswer(optionIndex)}
+                className={`w-full rounded-lg border px-4 py-3 text-left text-sm transition ${feedbackClass}`}
+              >
+                {option}
+              </button>
+            )
+          })}
+        </div>
       </div>
 
       {selectedAnswer !== null && (
@@ -114,9 +119,9 @@ export function QuizPlayer({ quiz, canMaster }: QuizPlayerProps) {
         type="button"
         onClick={goNext}
         disabled={selectedAnswer === null}
-        className="mt-6 rounded-lg bg-slate-950 px-4 py-2 text-sm font-medium text-white disabled:cursor-not-allowed disabled:opacity-50 dark:bg-white dark:text-slate-950"
+        className="mt-6 rounded-lg bg-slate-950 px-4 py-2 text-sm font-medium text-white transition hover:bg-slate-800 disabled:cursor-not-allowed disabled:opacity-50 dark:bg-white dark:text-slate-950 dark:hover:bg-slate-200"
       >
-        {currentIndex + 1 === quiz.questions.length ? 'Voir le rÃ©sultat' : 'Question suivante'}
+        {currentIndex + 1 === quiz.questions.length ? 'Voir le résultat' : 'Suivant'}
       </button>
     </section>
   )

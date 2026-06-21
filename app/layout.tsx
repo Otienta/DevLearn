@@ -3,6 +3,8 @@ import type { ReactNode } from 'react'
 import type { DomainConfig } from '@/types/content'
 import { Header } from '@/components/layout/Header'
 import { Sidebar } from '@/components/layout/Sidebar'
+import { getAllCourseMeta } from '@/lib/content'
+import './globals.css'
 
 export const metadata: Metadata = {
   title: 'DevLearn',
@@ -33,12 +35,14 @@ const domains: DomainConfig[] = [
   }
 ]
 
-export default function RootLayout({ children }: { children: ReactNode }) {
+export default async function RootLayout({ children }: { children: ReactNode }) {
+  const concepts = await getAllCourseMeta()
+
   return (
     <html lang="fr" className="dark">
       <body className="min-h-screen bg-slate-50 text-slate-950 antialiased dark:bg-slate-950 dark:text-slate-100">
         <div className="min-h-screen lg:flex">
-          <Sidebar domains={domains} />
+          <Sidebar domains={domains} concepts={concepts} />
           <div className="min-w-0 flex-1">
             <Header />
             <main>{children}</main>
